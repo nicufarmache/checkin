@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build2": "docker build . -t nicufrm/checkin",
+    "build": "docker buildx build --platform=linux/amd64,linux/arm64 . -t nicufrm/checkin",
+    "push": "docker push nicufrm/checkin"
   },
   "author": "",
   "license": "ISC",

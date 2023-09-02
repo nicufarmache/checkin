@@ -1,7 +1,7 @@
 import express from 'express';
 import translation from './translation.js';
 const app = express()
-const port = 3000
+const port = 3453
 
 // const HOST = 'http://192.168.2.222'
 const HOST = 'https://events.soulfeederweb.com/'
@@ -17,7 +17,7 @@ app.post('/proxy', async (req, res) => {
   if (action === 'checkinera_check_credentials') {
     const response = await fetch(`${HOST}/tc-api/${apiKey}/check_credentials`)
     const resData = await response.json()
-    console.log('DEBUG: resData:', resData)
+    // console.log('DEBUG: resData:', resData)
     if (resData.pass) {
       res.send({ is_valid: true });
     } else {
@@ -34,7 +34,7 @@ app.post('/proxy', async (req, res) => {
   if (action === 'checkinera_event_essentials') {
     const response = await fetch(`${HOST}/tc-api/${apiKey}/event_essentials`)
     const resData = await response.json()
-    console.log('DEBUG: resData:', resData)
+    // console.log('DEBUG: resData:', resData)
     if (resData.pass) {
       res.send( resData );
     } else {
@@ -76,13 +76,13 @@ app.post('/proxy', async (req, res) => {
 })
 
 app.get('*', function(req, res) {
-  // console.log('DEBUG: catch: ', req)
+  console.log('DEBUG: catch: ', req)
 });
 
 app.post('*', function(req, res) {
-  // console.log('DEBUG: catch: ', req)
+  console.log('DEBUG: catch: ', req)
 });
 
 app.listen(port, () => {
-  // console.log(`API listening on port ${port}`)
+  console.log(`API listening on port ${port}`)
 })
