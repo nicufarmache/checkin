@@ -1,0 +1,1299 @@
+@page { margin: 0; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    overflow: hidden;
+}
+
+/* Using the four safe area inset values with no fallback values */
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/checkinera-icons.eot%3Fgiqhjb');
+  src:  url('../fonts/checkinera-icons.eot%3Fgiqhjb') format('embedded-opentype'),
+    url('../fonts/checkinera-icons.ttf%3Fgiqhjb') format('truetype'),
+    url('../fonts/checkinera-icons.woff%3Fgiqhjb') format('woff'),
+    url('../fonts/checkinera-icons.svg%3Fgiqhjb') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-list:before {
+  content: "\e900";
+}
+.icon-wireless:before {
+  content: "\e901";
+}
+.icon-wireless-offline:before {
+  content: "\e907";
+}
+.icon-home:before {
+  content: "\e909";
+}
+.icon-barcode:before {
+  content: "\e90a";
+}
+.icon-arrow:before {
+  content: "\e90b";
+}
+.icon-camera:before {
+  content: "\e90c";
+}
+.icon-checked:before {
+  content: "\e90d";
+}
+.icon-power:before {
+  content: "\e90e";
+}
+
+
+.barcode-main img{
+    display: none;
+}
+
+.APP_TITLE{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+a {
+    text-decoration : none;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    height:100vh;
+    position: relative;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+button {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    padding: 16px 50px;
+    font-size: 1.1em;
+    border-radius: 3px;
+    margin: 35px 0 0 0;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+.tc-clear {
+    clear: both;
+}
+
+/* LOGIN SCREEN */
+
+.tc-login-wrap {
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+#tc_login_form {
+    width: 450px;
+    margin: 0 auto;
+}
+
+
+input[type="text"],
+input[type="password"]{
+    border: 1px solid;
+    height: 55px;
+    padding: 12px 15px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-size: 1.1em;
+    width: 100%;
+    transition:border linear 0.1s;
+    -webkit-transition:border linear 0.1s;
+    -moz-transition:border linear 0.1s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 1px solid;
+}
+
+body select {
+    padding: 12px 34px 12px 15px !important;
+    background-position:
+        calc(100% - 21px) calc(1em + 7px),
+        calc(100% - 16px) calc(1em + 7px),
+        100% 0;
+    background-size:
+        5px 5px,
+        5px 5px,
+        2.5em 2.5em;
+    background-repeat: no-repeat;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+}
+
+.tc-login-wrap input[type="text"],
+.tc-login-wrap label {
+    width: 100%;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95em;
+}
+
+.tc-login-input-wrap {
+    margin:0 0 20px 0;
+}
+
+.tc-login-input-wrap label {
+    margin-bottom: 8px;
+    display: inline-block;
+    letter-spacing: 0.04em;
+}
+
+/* AUTO LOGIN */
+
+.tc-notification {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    display: none;
+}
+
+.tc-notifications-wrap .tc-notification {
+    text-align: left;
+}
+
+.tc-auto-login {
+    width: 100%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 18px 0;
+    float: left;
+}
+
+.tc-auto-login input[type="checkbox"] {
+    float: right;
+}
+
+.tc-auto-login .login-text {
+    margin: 8px 0 0 0;
+    font-size: 1em;
+    font-family: 'Open Sans', arial sans-serif;
+    font-weight: lighter;
+    display: inline-block;
+}
+
+.tc-auto-connect {
+    width: 27%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 18px 0;
+    font-weight: bold;
+}
+.tc-auto-connect input[type="checkbox"] {
+    float: right;
+}
+
+.tc-auto-connect .auto-connect-text {
+    margin: 8px 0 0 0;
+    font-size: 1em;
+    font-family: 'Open Sans', arial sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+input[type="checkbox"] + span.tc-auto-connect-image {
+    display:inline-block;
+    width:58px;
+    height:36px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    float: right;
+}
+
+.tc-login-button {
+    -webkit-transition: all 0.2s linear;
+    float: right;
+}
+
+.tc-login-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + span.tc-login-image {
+    display:inline-block;
+    width:58px;
+    height:36px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    float: right;
+}
+
+.tc-sidebar {
+    width: 280px;
+    height: 500px;
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+
+.tc-sidebar-mask {
+    width: 280px;
+    position: absolute;
+    height: 100%;
+    z-index: 3;
+    border-right: 1px solid;
+}
+
+.tc-sidebar h1 {
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 30px 19px 30px 20px;
+}
+
+.tc-sidebar ul li {
+    border-top: 1px solid;
+}
+
+.tc-sidebar ul li span.tc-menu-icon {
+    margin-right: 14px;
+    font-size: 1.6em;
+    margin-top: -4px;
+    display: block;
+}
+
+.tc-sidebar ul li:last-child {
+    border-bottom: 1px solid;
+}
+
+.tc-sidebar ul li a {
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 23px 17px 23px 20px;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.2s linear;
+    display: flex;
+    align-content: center;
+}
+
+.tc-checkin-button {
+    float: right;
+    padding-left: 90px;
+    padding-right: 90px;
+    margin-right: 20px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 1s linear;
+    -webkit-transition: all 0.5s linear;
+    -all-transition: all 0.5s linear;
+}
+
+.tc-content {
+    width: calc(100% - 280px);
+    float: left;
+    height: 100vh;
+}
+
+.online_status {
+    display: inline-block;
+}
+
+.tc-status-wrap {
+    width: 280px;
+    position: absolute;
+    bottom: 5px;
+    z-index: 9999;
+    text-align: center;
+    left: 0;
+}
+
+.online {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.offline {
+    display: none;
+    width: 48px;
+    height: 48px;
+    opacity: 0.4;
+}
+
+/* STATS */
+
+.tc-half {
+    width: 50%;
+    float: left;
+}
+
+.tc-title {
+    border-bottom: 1px solid;
+}
+
+.tc-title h2 {
+    text-align: center;
+    padding: 29px 0 29px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tc-title h2:first-child {
+    border-right: 1px solid;
+}
+
+.tc-half-content .tc-ticket-info-wrap {
+    position: relative;
+    height: 78vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.tc-half-content span.tc-ticket-info {
+    font-size: 6em;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    height: 177px;
+}
+
+.tc-login {
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 24em;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.tc-content-heading input {
+    float: right;
+}
+
+.tc-content-heading h2 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    float: left;
+    margin: 30px 0 31px 30px;
+}
+
+.tc-content-heading input {
+    height: 45px;
+    margin: 17px 23px 0 0;
+    border: none;
+    width: 350px;
+    padding: 0 17px 0;
+    font-size: 1em;
+    font-weight: lighter;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.tc-content-heading input:focus {
+    border: none;
+}
+
+.tc-list-search button {
+    width: 24px;
+    height: 24px;
+    float: right;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    padding: 0;
+    margin: 28px 0 0 0;
+}
+
+.tc-list-search button:hover {
+    background-position: 0 -34px;
+    cursor: pointer;
+}
+
+.tc-tickets-one a.tc-list-link {
+    width: 34px;
+    height: 34px;
+    float: right;
+}
+
+.tc-tickets-list, .attendee-details-wrap{
+    overflow: auto;
+}
+
+.tc-tickets-one {
+    padding: 18px 32px;
+    cursor: pointer;
+}
+
+.tc-tickets-one:hover .tc_list_link{
+    background-position: 0 -47px;
+}
+
+.tc-tickets-one h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tc-tickets-one .tc-ticket-info {
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+.tc-tickets-one .tc-ticket-info span {
+    font-weight: bold;
+    font-family: 'Open Sans', Arial, helvetica;
+}
+
+.tc-tickets-one a.tc-list-link {
+    margin: -20px 0 0 0;
+}
+
+.tc-tickets-one a.tc-list-link:hover {
+    cursor: pointer;
+}
+
+.tc-tickets-one a.tc-list-link:hover {
+    background-position: 0 -47px;
+}
+
+
+/* SINGLE LIST */
+
+.tc-ticket-info-single {
+    width: 100%;
+    padding: 25px 33px 15px;
+    border: 1px solid;
+    position: relative;
+}
+
+.tc-ticket-info-single h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.tc-ticket-info-single > span {
+    float: left;
+    display: inline-block;
+    width: 100%;
+    font-size: 0.95em;
+    margin-top: 7px;
+    font-family: "open sans", arial, sans-serif;
+    font-weight: lighter;
+}
+
+.tc-ticket-info-single span .ticket_field_value {
+    font-weight: bold;
+}
+
+.tc-buyer-address span.tc-span-wrap {
+    font-weight: bold;
+    width: 100%;
+    float: left;
+    padding: 16px 35px;
+    border-bottom: 1px solid #d3d7d9;
+    font-size: 0.97em;
+    font-family: "open sans", Arial, sans-serif;
+    font-weight: lighter;
+    letter-spacing: 0.001em;
+    line-height: 1.4em;
+}
+
+.tc-buyer-address span.tc-span-wrap span {
+    display: inline;
+    font-weight: bold;
+}
+
+.tc-checkins {
+    float: left;
+    width: 100%;
+}
+
+.tc-checkins h4 {
+    padding: 20px 35px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid;
+}
+
+.tc-checkins ul {
+    padding-bottom: 30px;
+}
+
+.tc-checkins ul li {
+    border-bottom: 1px solid;
+    padding: 13px 0 13px 35px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.97em;
+    font-weight: lighter;
+}
+
+.tc-notifications-wrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid;
+    width: calc(100% - 280px);
+    right: 0;
+    padding: 20px 0;
+}
+
+.tc-notifications-wrap .tc-notification {
+    width: 400px;
+    display: block;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 0;
+
+}
+
+.tc-notifications-wrap button {
+    margin-top: 0;
+}
+
+a.tc-back-arrow {
+    position: absolute;
+    right: 30px;
+    top: 45px;
+    width: 34px;
+    height: 34px;
+}
+
+a.tc-move-arrow {
+    right: 18px;
+    top: 18px;
+}
+
+a.tc-back-arrow:hover {
+    background-position: 0 -47px;
+}
+
+/* BARCODE SCANNER */
+
+.barcode_holder {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: calc(100vh - 80px);
+    flex-direction: column;
+    gap: 0px;
+}
+
+@media (min-aspect-ratio: 4/3) {
+    .barcode_holder {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+.barcode-main {
+    text-align: center;
+}
+
+.camera {
+    min-height: 70px;
+    background-size: 70px;
+    font-size: 60px;
+    color: #6B5F89;
+}
+
+.tc_events_page_tc_barcode_reader #footer-thankyou,
+.tc_events_page_tc_barcode_reader #footer-upgrade {
+    display: none;
+}
+
+input[type=text]#barcode{
+    width: 350px;
+}
+.barcode_holder h1 {
+    font-size: 3em;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin: 20px 0 10px;
+}
+
+.barcode_holder input#barcode {
+    padding: 20px;
+    width: 450px;
+    margin: 15px 0 10px 0;
+    box-shadow: none;
+}
+
+.barcode_holder p {
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+.tc_events_page_tc_barcode_reader {
+    height: auto;
+}
+
+.barcode_holder .barcode_status {
+    font-size: 1.4em;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 23px 0;
+    width: 100%;
+    text-align: center;
+    margin: 60px 0 20px 0;
+}
+.barcode_holder table {
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    border: 1px solid;
+    border-spacing: 0;
+}
+
+.barcode_holder table tr th,
+.barcode_holder table tr td {
+    padding: 20px 0;
+    font-weight: normal;
+    font-size: 0.85em;
+    border-bottom: 1px solid;
+}
+
+.barcode_holder table tr td {
+    font-size: 0.8em;
+}
+.barcode_holder table tr th {
+    border-bottom: 1px solid;
+    font-weight: 700;
+}
+
+.barcode_holder #tc-additional-info {
+    margin: 45px 0 0 0;
+}
+
+.barcode_holder .ui-tabs-anchor {
+    padding: 20px 25px;
+    border: 1px solid;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    outline: none;
+    box-shadow: none !important;
+    font-weight: normal;
+    text-decoration: none;
+    z-index: 9;
+    position: relative;
+    margin-left: -1px;
+    float: left;
+    font-weight: bold;
+}
+
+.barcode_holder .ui-tabs-active a {
+    border-bottom: 1px solid transparent;
+}
+
+.barcode_holder ul  {
+    width: 100%;
+    float: left;
+}
+
+.barcode_holder ul li {
+    float: left;
+}
+
+.barcode_holder div.ui-tabs-panel {
+    float: left;
+    border: 1px solid;
+    width: 100%;
+    margin: -2px 0 0 0;
+}
+
+.tc-custom-fields-wrap {
+    padding: 30px 40px 20px;
+}
+
+
+
+.barcode_holder table {
+    text-align: center;
+}
+
+.barcode_holder .tc-additional-info {
+    width: 450px;
+}
+
+@media only screen and (max-width: 520px) {
+    .barcode_holder .tc-additional-info {
+        width: 90%;
+        /* padding: 20px; */
+    }
+}
+
+.barcode_holder .tc-additional-info #tc-custom-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.barcode_holder .tc-additional-info .tc-custom-field {
+    font-size: 1.3em;
+    display: inline-block;
+    font-family: Arial ,sans-serif;
+    letter-spacing: -0.01em;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.barcode_holder .tc-additional-info .tc-custom-field .tc-custom-field-name {
+    width: 200px;
+    font-size: 0.7em;
+}
+
+.barcode_holder .tc-additional-info .tc-custom-field .tc-custom-field-value {
+    font-weight: bold;
+}
+
+.barcode_holder .tc-custom-textarea span {
+    margin-bottom: 0;
+}
+
+.barcode_holder .tc-custom-fields-wrap p {
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    margin-top: 15px;
+    letter-spacing: 0.01em;
+    line-height: 1.7em;
+    margin-bottom: 30px;
+}
+
+.barcode_holder .tc-custom-input strong {
+    font-weight: bold;
+}
+
+.barcode_holder .tc-buyer-info table thead {
+    border-bottom: none;
+}
+
+.barcode_holder .tc-buyer-info table tr th {
+    border-bottom: none;
+    padding-bottom: 5px;
+}
+
+.barcode_holder .tc-buyer-info table tr td {
+    padding-top: 7px;
+    font-weight: bold;
+}
+
+.barcode_holder .tc-buyer-info table tfoot td {
+    text-align: right;
+    border-top: 1px solid;
+    padding-top: 30px;
+}
+
+.barcode_holder .tc-buyer-info table tfoot td span {
+    margin-right: 45px;
+}
+
+.barcode_holder .tc-buyer-info table tfoot span {
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+.barcode_holder .tc-buyer-info table tfoot span strong {
+    font-weight: 700;
+}
+
+.barcode_holder .tc-buyer-info {
+    border: 1px solid;
+}
+
+.barcode_holder .tc-buyer-info table {
+    border: none;
+    border-bottom: 1px solid;
+}
+
+
+.barcode_holder .tc-checkins table{
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.barcode_holder .tc-checkins table tr td:first-child,
+.barcode_holder .tc-checkins table tr th:first-child  {
+    text-align: left;
+    padding-left: 25px;
+}
+
+.barcode_holder .tc-checkins table tr td a.tc-delete-checkin {
+    font-size: 2em;
+}
+.preloader{
+    display: block;
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    top: 46%;
+    left: 56%;
+    display: none;
+}
+
+.tc_selectable{
+    -webkit-user-select: text;
+    cursor: text;
+    min-width: 100px;
+}
+
+h3.tc_selectable{
+    display: inline-block;
+}
+/*SCAN-MOD*/
+
+.tc-list-search button{
+    display: none;
+}
+
+.tc-ticket-additional-info > span {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0 0 0;
+    line-height: 1.3em;
+}
+
+.tc-ticket-additional-info {
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.4s linear;
+}
+
+.tc-additional-info-hide {
+    width: 100%;
+    height: 14px;
+    font-size: 16px;
+    margin-top: 5px;
+    transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    text-align: center;
+}
+
+.tc-additional-info-hide:hover {
+    cursor: pointer;
+}
+
+.tc-additional-info-hide.tc-turn-arrow {
+    transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.tc-hide-additional-info {
+    height: 0;
+    transition: height 0.4s linear;
+}
+
+.tc-close{
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.tc-hidden {
+    display: none;
+}
+
+.tc-close.tc-rounded::before, .tc-close.tc-rounded::after {
+    border-radius: 5px;
+}
+
+.tc-close.tc-heavy::before, .tc-close.tc-heavy::after {
+    height: 12px;
+    margin-top: -6px;
+}
+
+.tc-close::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.tc-close::before, .tc-close::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+}
+
+.tc-close.tc-rounded::before, .tc-close.tc-rounded::after {
+    border-radius: 5px;
+}
+
+.tc-close.tc-heavy::before, .tc-close.tc-heavy::after {
+    height: 12px;
+    margin-top: -6px;
+}
+
+.tc-close::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.tc-checkmark {
+    display: inline-block;
+    font-size: 16px;
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    height: 26px;
+    width: 46px;
+}
+
+.tc-checkmark:before {
+    content: " ";
+    display: block;
+    border: solid 0.8em #72C1A0;
+    border-radius: 0.8em;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 0.5em;
+    top: 27%;
+    margin-top: -30px;
+}
+
+.tc-checkmark:after {
+    width: 0.3em;
+    content: " ";
+    display: 0.3em;
+    width: 0.6em;
+    height: 1.4em;
+    border: solid #fff;
+    border-width: 0 0.4em 0.4em 0;
+    position: absolute;
+    left: 1em;
+    top: 40%;
+    margin-top: -14px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.notifyjs-bootstrap-success,
+.notifyjs-bootstrap-info,
+.notifyjs-bootstrap-warn,
+.notifyjs-bootstrap-error {
+    height: 79px;
+    border-radius: 0 !important;
+}
+
+
+body .notifyjs-wrapper .notifyjs-bootstrap-base {
+    text-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+}
+
+body .notifyjs-corner .notifyjs-wrapper,
+body .notifyjs-corner .notifyjs-container,
+body .notifyjs-corner {
+    margin: 0;
+}
+
+.tc-login-logo {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 25px 0;
+    display: inline-block;
+}
+
+.tc-login-logo img {
+    max-width: 100%;
+}
+
+.tc-tickets-one a.tc-list-link,
+a.tc-back-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+a.tc-back-arrow {
+    transform: rotate(180deg);
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 85px;
+  height: 85px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+.tc-notifications-wrap,
+.online_status {
+    display: none;
+}
+
+/* CHECKINERA DIALOG BOX */
+
+.checkinera-dialog-box .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.checkinera-dialog-box {
+    background-color: #fff;
+
+    z-index: 9999;
+}
+
+.checkinera-dialog-box .ui-dialog-titlebar {
+    background-color: #6B5F89;
+    padding: 20px 25px;
+}
+
+.checkinera-dialog-box .ui-dialog-titlebar span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.checkinera-dialog-box .ui-dialog-content {
+    padding: 20px;
+}
+
+.checkinera-dialog-box .ui-dialog-buttonset {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.checkinera-dialog-box .ui-dialog-buttonset button {
+    margin: 0 10px;
+    padding: 16px 30px;
+}
+
+#checkinera-singout .checkinera_signout_cancel {
+    background-color: transparent !important;
+    color: #6b5f89;
+}
+
+.checkinera-dialog-box .ui-dialog-buttonset button:nth-child(2):hover {
+    color: #ffdf3b;
+}
+
+.tc-dialog-content button:hover {
+    cursor: pointer;
+}
+
+#checkinera-singout {
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.31);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.31);
+    position: absolute;
+    top: calc(50% - 91px);
+    left: calc(50% - 185px);
+    display: none;
+    z-index: 999;
+}
+
+
+#checkinera-singout .tc-dialog-title {
+    width: 100%;
+    background-color: #6b5f89;
+    color: #fff;
+    display:inline-block;
+    padding: 20px;
+}
+
+.tc-dialog-content {
+    padding: 10px;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}

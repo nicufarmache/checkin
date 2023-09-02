@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/assets/images/icons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon-180x180.png" />
+    <!--<link rel="manifest" href="">-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/js/html5-qrcode.min.js"></script>
+    <script type="text/javascript" src="/assets/js/keypress-2.1.3.min.js"></script>
+    <script type="text/javascript" src="/assets/js/notify.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var checkinera_ajax = {
+            "ajaxUrl"           : "/proxy",
+            "fail_sound_url"    : "/assets/sounds/fail.mp3",
+            "use_ga"            : "1",
+            "track_logins_ga"   : "1",
+            "track_checkins_ga" : "1",
+            "tickets_per_page"    : "20",
+        };
+        /* ]]> */
+    </script>
+        <title class="APP_TITLE">Check-in</title>
+    <style>
+            .tc-sidebar-mask,
+            .tc-title,
+            .tc-login,
+            .tc-content-heading,
+            .tc-notifications-wrap button,
+            button,
+            .lds-ellipsis div,
+            #checkinera-singout .tc-dialog-title,
+            .checkinera-dialog-box .ui-dialog-buttonset button {
+                background-color: #6b5f89;
+            }
+
+            .tc-tickets-one .tc-ticket-info span,
+            .tc-ticket-info-single span .ticket_field_value,
+            .tc-buyer-address span.tc-span-wrap span,
+            .tc-additional-info-hide,
+            .camera,
+            #checkinera-singout .checkinera_signout_cancel {
+                color: #6b5f89;
+            }
+
+            .tc-sidebar ul li.active a,
+            .tc-sidebar ul li a:hover,
+            button:hover,
+            .tc-login-button,
+            input[type="checkbox"]:checked + span.tc-login-image .tc-login-ball,
+            .checkinera-dialog-box .ui-dialog-buttonset button:hover {
+                background-color: #ffdf3b;
+            }
+
+            .tc-sidebar ul li.active a,
+            .tc-sidebar ul li a:hover {
+                color: #3c3c3c;
+            }
+
+            .online,
+            .offline,
+            #checkinera-singout .checkinera_signout_cancel:hover {
+                color: #ffdf3b;
+            }
+
+            .tc-sidebar ul li:hover, .tc-sidebar ul li.active {
+                border-color: #ffdf3b;
+            }
+
+            .tc-sidebar h1,
+            .tc-title h2,
+            .tc-sidebar ul li a,
+            .tc-content-heading h2,
+            label {
+                color:  #fff;
+            }
+
+            .tc-half-content span.tc-ticket-info,
+            .tc-tickets-one h3 ,
+            .tc-tickets-one .tc-ticket-info,
+            .tc-ticket-info-single h3,
+            .tc-buyer-address span.tc-span-wrap,
+            .tc-checkins ul li,
+            .tc-ticket-additional-info span,
+            .tc-checkins h4,
+            .barcode_holder h1,
+            input[type="text"], input[type="password"] {
+                color: #3E3D40;
+            }
+
+            .barcode_holder .barcode-main .tc-notification {
+                color: #3E3D40 !important;
+            }
+
+            .info-message,
+            .tc-login .info-message {
+                color: #fff!important;
+            }
+
+            .tc-content,
+            .tc-notifications-wrap {
+                background-color: #fff;
+            }
+
+            .tc-tickets-list,
+            .checkinera-dialog-box {
+                background-color: #fff !important;
+            }
+
+            .tc-tickets-one a.tc-list-link:hover,
+            a.tc-back-arrow:hover {
+                background-color: #6b5f89;
+                color: #fff;
+            }
+
+            .notifyjs-wrapper .notifyjs-bootstrap-success,
+            .tc-checkin-button.success {
+                background-color: #72C1A0;
+                color: #fff;
+            }
+
+            .tc-checkin-button.error {
+                background-color: #FF5F4E;
+                color: #fff;
+            }
+
+            .tc-login-button {
+                color: #3c3c3c;
+            }
+            .tc-checkin-button {
+                color: #fff;
+            }</style>
+</head>
+<body>
+<div class="tc-status-wrap">
+    <div class="online_status">
+        <div class="online"><span class="icon-wireless"></span></div>
+        <div class="offline"><span class="icon-wireless-offline"></span></div>
+    </div>
+</div><!-- .tc-status-wrap -->
+<div class="tc-login">
+    <div class="tc-login-wrap">
+        <div class="tc-notification"><!--error, info, warning and success messages goes here--></div>
+                <form id="tc_login_form">
+                            <div class="tc-login-logo"></div>
+                <div class="tc-login-input-wrap">
+                    <label for="tc-website-url">
+                        <span class="WORDPRESS_INSTALLATION_URL">WORDPRESS INSTALLATION URL</span>
+                    </label>
+                    <input type="text" id="tc-website-url" placeholder="http://www.website.com/" value="https://events.soulfeederweb.com/" />
+                </div>
+                <div class="tc-login-input-wrap">
+                    <label for="tc-api-key"><span class="API_KEY">API KEY</span></label>
+                    <input type="password" id="tc-api-key"/>
+                </div>
+                <div class="tc-auto-login">
+                    <label>
+                        <span class="login-text AUTO_LOGIN">AUTO LOGIN</span>
+                        <input type="checkbox" id="auto-login">
+                        <span class="tc-login-image">
+                            <span class="tc-login-ball"></span>
+                        </span>
+                    </label>
+                </div>
+                <button class="tc-login-button SIGN_IN">SIGN IN</button>
+                    </form>
+    </div>
+</div>
+    <div class="tc-stats">
+  <div class="tc-sidebar-mask"></div>
+  <div class="tc-sidebar">
+
+    <h1><span class="APP_TITLE">Ticket Check-in</span></h1>
+
+    <ul>
+      <li class="active"><a class="tc-menu-home"><span class="icon-home tc-menu-icon"></span><span class="HOME_STATS">Home - Stats</span></a></li>
+      <li><a class="tc-menu-list"><span class="icon-list tc-menu-icon"></span><span class="LIST">LIST</span></a></li>
+      <li><a class="tc-menu-start-scan"><span class="icon-barcode tc-menu-icon"></span><span class="CHECK_IN">CHECK IN</span></a></li>
+      <li><a class="tc-menu-singout"><span class="icon-power tc-menu-icon"></span><span class="SIGN_OUT">SIGN OUT</span></a></li>
+    </ul>
+
+  </div><!-- .tc-sidebar -->
+
+  <div class="tc-content">
+
+    <div class="tc-half">
+      <div class="tc-title">
+        <h2><span class="SOLD_TICKETS">TICKETS SOLD</span></h2>
+      </div><!-- .tc-title -->
+
+      <div class="tc-half-content">
+
+        <div class="tc-ticket-info-wrap">
+          <span class="tc-ticket-info">
+            <span class="tickets_sold_number counter">0</span>
+            <br /><img src="/assets/images/sold-tickets.png" />
+          </span>
+        </div>
+      </div><!-- .tc-half-content -->
+
+    </div><!-- .tc-half -->
+
+
+    <div class="tc-half">
+      <div class="tc-title">
+        <h2><span class="CHECKED_IN_TICKETS">CHECK-IN TICKETS</span></h2>
+      </div><!-- .tc-title -->
+
+      <div class="tc-half-content">
+        <div class="tc-ticket-info-wrap">
+            <span class="tc-ticket-info"><span class="tickets_checked_in counter">0</span>
+              <br /><img src="/assets/images/checked-tickets.png"/>
+            </span>
+        </div>
+    </div><!-- .tc-half-content -->
+  </div><!-- .tc-half -->
+
+</div>
+</div><!--tc-stats-->
+    <div class="tc-list">
+
+  <div class="tc-sidebar-mask"></div>
+
+  <div class="tc-sidebar">
+
+    <h1><span class="APP_TITLE">Ticket Check-in</span></h1>
+
+    <ul>
+      <li><a class="tc-menu-home"><span class="icon-home tc-menu-icon"></span><span class="HOME_STATS">Home - Stats</span></a></li>
+      <li class="active"><a class="tc-menu-list"><span class="icon-list tc-menu-icon"></span><span class="LIST">LIST</span></a></li>
+      <li><a class="tc-menu-start-scan"><span class="icon-barcode tc-menu-icon"></span><span class="CHECK_IN">CHECK IN</span></a></li>
+      <li><a class="tc-menu-singout"><span class="icon-power tc-menu-icon"></span><span class="SIGN_OUT">SIGN OUT</span></a></li>
+    </ul>
+
+  </div><!-- .tc-sidebar -->
+
+  <div class="tc-content">
+
+    <div class="tc-content-heading">
+      <h2><span class="LIST">List</span></h2>
+
+      <div class="tc-list-search">
+        <span class="SEARCH" style="display: none;">Search</span>
+        <input type="text" class="search_field" placeholder="Search"/>
+        <button></button>
+      </div><!-- .tc-list-search -->
+
+      <div class="tc-clear"></div>
+    </div><!-- .tc-content-heading -->
+
+    <div class="tc-tickets-list">
+      <div class="tc-notification"><span class="please_wait">Please wait...</span></div>
+
+      <!--loading, please wait...-->
+
+    </div><!-- .tc-tickets-list -->
+
+
+  </div> <!-- .tc-content -->
+</div><!--tc-list-->
+    <div class="tc-single-list">
+
+  <div class="tc-sidebar-mask"></div>
+
+  <div class="tc-sidebar">
+
+    <h1><span class="APP_TITLE">Ticket Check-in</span></h1>
+
+    <ul>
+      <li><a class="tc-menu-home"><span class="icon-home tc-menu-icon"></span><span class="HOME_STATS">Home - Stats</span></a></li>
+      <li class="active"><a class="tc-menu-list"><span class="icon-list tc-menu-icon"></span><span class="LIST">LIST</span></a></li>
+      <li><a class="tc-menu-start-scan"><span class="icon-barcode tc-menu-icon"></span><span class="CHECK_IN">CHECK IN</span></a></li>
+      <li><a class="tc-menu-singout"><span class="icon-power tc-menu-icon"></span><span class="SIGN_OUT">SIGN OUT</span></a></li>
+    </ul>
+
+  </div><!-- .tc-sidebar -->
+
+  <div class="tc-content">
+
+    <div class="tc-content-heading">
+      <h2><span class="LIST">List</span></h2>
+
+      <div class="tc-list-search">
+        <span class="SEARCH" style="display: none;">Search</span>
+        <input type="text" class="search_field" placeholder="Search" disabled />
+        <button></button>
+      </div><!-- .tc-list-search -->
+
+      <div class="tc-clear"></div>
+    </div><!-- .tc-content-heading -->
+
+    <div class="tc-ticket-single">
+
+      <div class="tc-ticket-info-single">
+        <h3><span class="buyer_name_value tc_selectable">N/A</span></h3>
+        <div class="tc-ticket-additional-info">
+            <span><span class="ID">ID</span>: <span class="ticket_id_value ticket_field_value tc_selectable">N/A</span></span>
+            <span><span class="PURCHASED">Purchased</span>: <span class="purchased_date_value ticket_field_value">N/A</span></span>
+            <div class="tc-clear"></div>
+        </div>
+        <div class="tc-additional-info-hide"><span class="icon-arrow"></span></div>
+        <a href="index.html#" class="tc-back-arrow"><span class="icon-arrow"></span></a>
+
+      </div><!-- .tc-ticket-info-single -->
+
+      <div class="attendee-details-wrap">
+        <div class="tc-buyer-address">
+
+        </div><!-- .tc-buyer-address -->
+
+        <div class="tc-checkins">
+
+          <h4><span class="CHECKINS">Checkins</span></h4>
+
+          <ul>
+            <li><span class="PLEASE_WAIT">Please wait...</span></li>
+          </ul>
+
+        </div><!-- .tc-checkins -->
+      </div>
+
+
+      <div class="tc-notifications-wrap">
+
+        <div class="tc-notification"><!--Notification message here--></div>
+
+        <button class="tc-checkin-button" data-checksum=""><span class="CHECK_IN">Check In</span></button>
+      </div><!-- .tc-notifications-wrap -->
+
+
+    </div><!-- .tc-tickets-list -->
+
+
+  </div> <!-- .tc-content -->
+
+</div><!-- .tc-single-wrap -->
+    <div class="tc-scan">
+
+  <div class="tc-sidebar-mask"></div>
+
+  <div class="tc-sidebar">
+
+    <h1><span class="APP_TITLE">Ticket Check-in</span></h1>
+
+    <ul>
+      <li><a class="tc-menu-home"><span class="icon-home tc-menu-icon"></span><span class="HOME_STATS">Home - Stats</span></a></li>
+      <li><a class="tc-menu-list"><span class="icon-list tc-menu-icon"></span><span class="LIST">LIST</span></a></li>
+      <li class="active"><a class="tc-menu-start-scan"><span class="icon-barcode tc-menu-icon"></span><span class="CHECK_IN">CHECK IN</span></a></li>
+      <li><a class="tc-menu-singout"><span class="icon-power tc-menu-icon"></span><span class="SIGN_OUT">SIGN OUT</span></a></li>
+    </ul>
+
+  </div><!-- .tc-sidebar -->
+
+  <div class="tc-content">
+
+    <div class="tc-content-heading">
+      <h2><span class="CHECK_IN">Check In</span></h2>
+
+      <div class="tc-list-search">
+        <span class="SEARCH" style="display: none;">Search</span>
+        <input type="text" class="search_field" placeholder="Search" disabled />
+        <button></button>
+      </div><!-- .tc-list-search -->
+
+      <div class="tc-clear"></div>
+    </div><!-- .tc-content-heading -->
+
+
+    <div class="barcode_holder">
+
+      <div class="barcode-main">
+        <div id="reader" style="height: 300px; display: none; background-color: #3c3c3c;"></div>
+        <img src="/assets/images/barcode-scanner.png" />
+        <h2><span class="CHECK_IN">Check In</span></h2>
+        <div class="camera"><span class="icon-camera"></span></div>
+        <input type="text" name="barcode" id="barcode" />
+        <div class="tc-notification"></div>
+      </div><!-- .barcode-main -->
+
+      <div id="tc-additional-info-display-none" class="tc-additional-info">
+
+        <div id="tc-custom-fields">
+
+        </div><!-- #custom-fields -->
+
+      </div><!-- #tc-additional-info -->
+
+    </div><!-- .barcode-holder -->
+
+  </div><!-- .tc-content -->
+
+</div><!-- .tc-single-wrap -->
+    <div id="checkinera-singout">
+        <div class="tc-checkiner-singout-inside">
+            <span class="tc-dialog-title SIGN_OUT">Sign Out</span>
+            <div class="tc-dialog-content">
+                <p class="DIALOG_TEXT">Are you sure you want to sign out?</p>
+                <button class="checkinera_signout SIGN_OUT">Sign Out</button>
+                <button class="checkinera_signout_cancel CANCEL">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,393 @@
+.error-message{
+    color: #FFDF3B !important;
+}
+
+.info-message{
+    color: #6F6F6F !important;
+}
+
+.tc-login .info-message {
+    color: #fff !important;
+}
+
+.warning-message{
+    color: #ff6600 !important;
+}
+
+.success-message{
+    color: #72C1A0 !important;
+}
+input[type="text"],
+input[type="password"]{
+    color: #3a3a3a;
+    border-color:#D8D8D8;
+}
+input[type="text"]:focus {
+    border-color:#6B5F89;
+}
+body {
+    background-color: #6a5f89;
+}
+body select {
+    background:
+        linear-gradient(45deg, transparent 50%, #6B5F89 50%),
+        linear-gradient(135deg, #6B5F89 50%, transparent 50%);
+}
+
+body.tc-home-login {
+    background-color: #6b5f89;
+}
+label {
+    color: #fff;
+}
+button {
+    background-color: #6B5F89;
+    color: #fff;
+}
+input[type="checkbox"] + span.tc-auto-connect-image{
+    background:url(../images/input-check-dark.png) left -50px no-repeat;
+}
+input[type="text"],
+input[type="password"]{
+    color: #3a3a3a;
+}
+.tc-auto-login {
+    border-top-color:rgba(255, 255, 255, 0.2);
+    border-bottom-color:rgba(255, 255, 255, 0.2);
+}
+.tc-login-button {
+    color: #3c3c3c;
+    background-color: #ffdf3b;
+}
+.tc-login-button:hover {
+    opacity: 0.8;
+}
+.tc-auto-connect {
+    border-top-color:rgba(255, 255, 255, 0.2);
+    border-bottom-color:rgba(255, 255, 255, 0.2);
+}
+input[type="checkbox"] + span.tc-login-image {
+    /*background:url(../images/input-check.png) left -50px no-repeat;*/
+    width: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    
+}
+
+input[type="checkbox"] + span.tc-login-image .tc-login-ball {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: 2px 2px 0 1px;
+}
+
+input[type="checkbox"]:checked + span.tc-login-image .tc-login-ball {
+    float: right;
+    background-color: #ffdf3b;
+}
+
+input[type="checkbox"]:checked + span.tc-login-image {
+    /*background:url(../images/input-check.png) left top no-repeat;*/
+}
+.tc-sidebar-mask {
+    background-color: #6B5F89;
+    border-right-color:rgba(255, 255, 255, 0.2);
+}
+.tc-sidebar h1 {
+    color: #fff;
+}
+.tc-sidebar ul li {
+    border-top-color:rgba(255, 255, 255, 0.2);
+}
+.tc-sidebar ul li:last-child {
+    border-bottom-color:rgba(255, 255, 255, 0.2);
+}
+.tc-sidebar ul li a {
+    color: #fff;
+}
+.tc-sidebar ul li:hover,
+.tc-sidebar ul li.active {
+    border-top-color:#FFE97C;
+}
+.tc-sidebar ul li a:hover {
+    background-color: #ffdf3b;
+    color: #3c3c3c;
+}
+.tc-sidebar ul li.active a {
+    background-color: #ffdf3b;
+    color: #3c3c3c;
+}
+.tc-content {
+    background: #fff;
+}
+.online,
+.offline {
+    color: #ffdf3b;
+    font-size: 28px;
+}
+
+
+.tc-title {
+    background-color: #6B5F89;
+    color: #fff;
+    border-bottom-color:rgba(255, 255, 255, 0.2);
+}
+
+.tc-title h2:first-child {
+    border-right-color:rgba(255, 255, 255, 0.2);
+}
+
+.tc-content .tc-half:first-child {
+    border-right-color:#c8cbcd;
+}
+
+.tc-title h2 {
+    color: #fff;
+}
+.tc-half-content span.tc-ticket-info {
+    color: #6F6F6F;
+}
+
+.tc-login {
+    background-color: #6b5f89;
+}
+.tc-content-heading h2 {
+    color: #fff;
+}
+
+.tc-content-heading {
+    background-color: #6B5F89;
+}
+.tc-list-search button {
+    background: url('../images/magnifier.png') no-repeat;
+}
+
+
+.tc-tickets-list .tc-tickets-one:nth-child(even){
+    background-color: rgba(0,0,0,0.03);
+}
+.tc-tickets-one h3 {
+    color: #3E3D40;
+}
+
+.tc-tickets-one .tc-ticket-info {
+    color: #6B6B6B;
+}
+
+.tc-tickets-one .tc-ticket-info span {
+    color: #6B5F89;
+}
+.tc-ticket-info-single {
+    border-color:#d3d7d9;
+}
+
+.tc-ticket-info-single h3 {
+    color: #3a3a3a;
+}
+.tc-ticket-info-single > span {
+    color: #3E3D40;
+}
+.tc-ticket-info-single span .ticket_field_value {
+    color: #6B5F89;
+}
+
+.tc-buyer-address span.tc-span-wrap {
+    color: #3E3D40;
+
+}
+
+.tc-buyer-address span.tc-span-wrap span {
+    color: #6B5F89;
+}
+
+.tc-checkins h4 {
+    color: #3a3a3a;
+    border-bottom-color:#e5e5e5;
+}
+
+.tc-checkins ul li {
+    color: #3E3D40;
+     border-bottom-color:#e5e5e5;
+}
+.tc-notification {
+    color: #fff;
+}
+.tc-notification .please_wait {
+    color: #fff !important;
+}
+.tc-notifications-wrap {
+    background-color: #fff;
+    border-top-color:#cecece;
+}
+.tc-notifications-wrap .tc-notification.error-message{
+    color: #FF5F4E !important;
+}
+
+.barcode_status.default{
+    color: #000;
+}
+.barcode_holder table {
+    border-color:#e2e2e2;
+}
+.barcode_holder table thead {
+    background-color: #f6f6f6;
+}
+
+.barcode_status.success{
+    color: green;
+}
+
+.barcode_status.error,
+.barcode_status.error_exists{
+    color: red;
+}
+.tc_events_page_tc_barcode_reader {
+    background-color: #fefefe;
+}
+.barcode_holder .barcode_status {
+    color: #fff;
+}
+.barcode_holder .error_exists {
+    background-color: #ff5f4e;
+}
+.barcode_holder table tr td {
+    color: #3e3e3e;
+}
+
+.barcode_holder table tr th,
+.barcode_holder table tr td {
+    border-bottom-color:#e3e3e3;
+}
+
+.barcode_holder table tr th {
+    color: #3a3a3a;
+    border-bottom-color:#ebebeb;
+}
+.barcode_holder .ui-tabs-anchor {
+    background-color: #f3f3f3;
+    color: #585858;
+    border-color:#ebebeb
+}
+
+.barcode_holder .ui-tabs-active a {
+    background-color: #fefefe;
+    color: #585858;
+}
+.barcode_holder div.ui-tabs-panel {
+    background-color: #fefefe;
+    border-color:#ebebeb
+}
+.barcode-main .check_in {
+    color: #3E3D40;
+}
+.barcode_holder .tc-additional-info span {
+    color: #585858;
+}
+.barcode_holder .tc-custom-fields-wrap p {
+    color: #7f7f7f;
+}
+.barcode_holder .tc-custom-input strong {
+    color: #1abc9c;
+}
+.barcode_holder .tc-buyer-info {
+    border-color:#ebebeb;
+}
+
+.barcode_holder .tc-buyer-info table {
+    border-bottom-color: #ebebeb;
+}
+.barcode_holder .tc-buyer-info table thead {
+    background-color: #fdfdfd;
+}
+.barcode_holder .tc-buyer-info table tr th {
+    background-color: #fdfdfd;
+}
+.barcode_holder .tc-buyer-info table tr td {
+    color: #1abc9c;
+}
+
+.barcode_holder .tc-buyer-info table tfoot td {
+    border-top-color:#ebebeb;
+}
+
+.barcode_holder .tc-buyer-info table tfoot span strong {
+    color: #1abc9c;
+}
+.barcode_holder .tc-checkins table{
+    border-bottom-color:#ebebeb;
+}
+.barcode_holder .tc-checkins table tr td {
+    color: #1abc9c;
+}
+
+.barcode_holder .tc-checkins table tr.tc-pass-failed td {
+    color: red;
+}
+.barcode_holder .tc-checkins table tr td a.tc-delete-checkin {
+    color: #ee5b5b;
+}
+.barcode_holder table thead {
+    background-color: #fefefe;
+}
+
+.barcode_holder .barcode_status.success {
+    background-color: #2ecc71;
+}
+.barcode_holder .tc-checkins table tr td a.tc-delete-checkin {
+    color: #ee5b5b;
+}
+
+.tc-scan .error-message{
+    background-color: #FF5F4E !important;
+    color: white !important;
+
+}
+.tc-scan .success-message{
+    background-color: #72C1A0 !important;
+    color: white !important;
+}
+
+.tc-checkin-button.success {
+    background-color: #72C1A0;
+}
+
+.tc-checkin-button.error {
+    background-color: #FF5F4E;
+}
+
+.tc-close::before, .tc-close::after {
+    background-color: #fff;
+}
+
+.notifyjs-bootstrap-success,
+.notifyjs-bootstrap-info,
+.notifyjs-bootstrap-warn,
+.notifyjs-bootstrap-error {
+    background-image: none;
+    background-color: #ffdf3b;
+    border-color: #3c3c3c;
+    color: #3c3c3c;
+}
+
+.notifyjs-wrapper .notifyjs-bootstrap-success {
+    background-color: #72C1A0;
+    background-image: none;
+    color: #fff;
+    border: none;
+}
+
+.tc-tickets-one a.tc-list-link:hover, 
+a.tc-back-arrow:hover {
+    background-color: #6b5f89;
+    color: #fff;
+}
+
+.tc-additional-info-hide {
+    color: #6B5F89;
+}
+
+.lds-ellipsis div {
+      background: #6B5F89;
+}

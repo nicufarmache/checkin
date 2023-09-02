@@ -1,0 +1,498 @@
+@media only screen and (max-width: 1080px) { 
+
+    .tc-half-content span.tc-ticket-info {
+        font-size: 4.5em;
+    }
+    
+    .tc-half-content span.tc-ticket-info {
+        height: 192px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 1024px) { 
+   
+    .tc-checkin-button {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .tc-notifications-wrap .tc-notification {
+        width: 290px;
+    }
+    
+    .tc-tickets-one h3 {
+        margin-bottom: 4px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 820px) {
+
+    body {
+        font-size: 90%;
+    }
+
+    .tc-sidebar-mask, .tc-sidebar{
+        width: 200px;
+    }
+
+    .tc-content{
+        width: calc(100% - 60px);
+    }
+    .tc-status-wrap{
+        width: 60px;
+    }
+
+    .tc-sidebar li a span{
+        display: none;
+    }
+
+    .tc-sidebar ul li a{
+        padding-bottom: 39px;
+        display: block;
+    }
+
+    .tc-sidebar h1{
+        display: none;
+    }
+
+    .tc-half .tc-title{
+        display: none;
+    }
+
+    .tc-content-heading h2{
+        display: none;
+    }
+    .tc-content-heading input{
+        height: 45px;
+        margin: 9px 9px 9px 0px;
+        border: none;
+        width: 96%;
+        padding: 0 17px 0;
+    }
+    .tc-status-wrap{
+        width: 60px;
+        left: 0;
+        bottom: 0;
+        padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    }
+    .tc-sidebar-mask, .tc-sidebar{
+        width: 60px;
+    }
+    .tc-notifications-wrap {
+        width: calc(100% - 60px);
+    }
+    
+    .tc-sidebar ul li span.tc-menu-icon {
+        margin-right: 0;
+    }
+    
+    .tc-sidebar ul li a {
+        padding: 18px 17px 18px 20px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 730px)/* and (-webkit-device-pixel-ratio : 2) */{
+    body {
+        font-size: 100%;
+    }
+
+    .tc-notifications-wrap {
+        width: calc(100% - 60px);
+    }
+    .tc-tickets-one {
+        padding: 15px 10px;
+    }
+    .tc-list-search button{
+        width: 24px;
+        height: 24px;
+        float: right;
+        position: absolute;
+        right: 17px;
+        top: 0;
+        padding: 0;
+        margin: 22px 0 0 0;
+        display: none;
+    }
+    
+    .tc-half-content span.tc-ticket-info {
+        height: 177px;
+    }
+    
+    .tc-checkin-button {
+        width: 95%;
+        float: none;
+        display: inherit;
+        margin: 0 auto;
+    }
+    
+    .tc-buyer-address span.tc-span-wrap {
+        padding: 16px 15px;
+    }
+    
+    .tc-checkins h4 {
+        padding: 20px 15px;
+    }
+    
+    .tc-checkins ul li {
+        padding-left: 15px;
+    }
+    
+    .tc-ticket-info-single {
+        padding: 25px 15px;
+    }
+    
+    .tc-notifications-wrap {
+        padding: 10px 0;
+    }
+    
+    .tc-notifications-wrap .tc-notification {
+        width: 100%;
+        margin-left: 15px;
+    }
+    
+    
+    .tc-stats .tc-half {
+        width: 100%;
+        height: 50vh;
+    }
+    
+    .tc-half-content .tc-ticket-info-wrap {
+        height: 50vh;
+    }
+    
+    .tc-half-content span.tc-ticket-info {
+        height: 152px;
+    }
+    
+    .tc-tickets-one {
+        padding: 18px;
+    }
+    
+    .tc-tickets-one h3 {
+        margin-bottom: 2px;
+    }
+    
+    .tc-half-content span.tc-ticket-info {
+        font-size: 4.5em;
+    }
+    
+    body .notifyjs-corner {
+        width: 100%;
+    }
+
+    .notifyjs-bootstrap-base span {
+        white-space: pre-wrap;
+        text-align: center;
+        line-height: 1.3em;
+    }
+    
+    .notifyjs-bootstrap-success, 
+    .notifyjs-bootstrap-info, 
+    .notifyjs-bootstrap-warn, 
+    .notifyjs-bootstrap-error {
+        height: 120px;
+    }
+    
+}
+
+
+@media only screen and (max-width: 520px){
+    
+    .tc-tickets-one {
+        position: relative;
+    }
+    
+    .tc-tickets-one a.tc-list-link{
+        background: none;
+        background: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        left: 0;
+        top: 0;
+        margin: 5px;
+    }
+
+    .barcode-main{
+        width:90%;
+        /* padding: 20px; */
+    }
+    .barcode_holder input#barcode{
+        width:100%;
+    }
+    
+    .barcode_holder h1 {
+        font-size: 2.5em;
+    }
+    
+    .tc-notification.info-message {
+        font-size: 1em;
+    }
+    
+    #tc_login_form {
+        width: 94%;
+        margin: 0 auto;
+    }
+    
+    .tc-ticket-additional-info > span {
+        font-size: 0.8em;
+        margin-top: 3px;
+    }
+    
+    .tc-tickets-one a.tc-list-link, a.tc-back-arrow {
+        border: none;
+    }
+    
+    .tc-tickets-list .tc-tickets-one a.tc-list-link:hover, 
+    .tc-tickets-list a.tc-back-arrow:hover {
+        background-color: transparent;
+    }
+    
+}
+
+@media only screen and (max-width: 480px){
+    .tc-login-wrap{
+        width:100%;
+        padding:10px;
+    }
+    .tc-single-list .tc-ticket-info-single{
+        padding: 15px 10px;
+    }
+    .tc-single-list .tc-buyer-address span.tc-span-wrap{
+        padding: 15px 10px;
+        line-height: 1.3em;
+    }
+    .tc-checkins h4{
+        padding: 20px 10px;
+    }
+    .tc-checkins ul li{
+        padding: 8px 0 8px 10px;
+        font-size: 0.9em;
+    }
+    .tc-checkin-button{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .tc_selectable{
+        min-width: 85px;
+    }
+    .tc-tickets-one {
+        font-size: 14px;
+    }
+    .tc-tickets-one .tc-ticket-info{
+        margin-right: 0;
+    }
+    
+    .tc-ticket-info-single > span{
+        font-size: 0.78em;
+        line-height: 1.4em;
+    }
+    
+    .tc-notification.info-message {
+        padding: 3px 0 15px;
+    }
+    
+    .tc-ticket-info-single h3 {
+        font-size: 1.3em;
+    }
+    
+    a.tc-back-arrow {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .notifyjs-bootstrap-base span {
+        position: absolute;
+        float: none;
+        padding: 0 10px;
+        font-size: 1em;
+    }
+    
+    #checkinera-singout {
+        width: 90% !important;
+        left:0;   
+        right:0;
+        margin: 0 auto;
+    }
+
+    
+}
+
+@media only screen and (max-width: 420px){ 
+    
+    #checkinera-singout button {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .tc-dialog-content p{
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 380px){
+
+    .tc-buyer-address span.tc-span-wrap{
+        font-size: 0.89em; 
+    }
+    .tc-checkin-button{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .tc-content-heading input{
+        width: 94%;
+    }
+    .tc-tickets-one {
+        padding: 10px 10px;
+    }
+    .tc-tickets-one .tc-ticket-info {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .tc-login-button {
+        width: 100%;
+    }
+    
+    .tc-single-list .tc-ticket-info-single {
+        padding: 15px 36px 15px 10px;
+    }
+    a.tc-back-arrow {
+        top: 20px;
+        right: 10px;
+    }
+    
+    .barcode_holder h1 {
+        font-size: 2em;
+    }
+    
+    .tc-notification.info-message {
+        font-size: 0.8em;
+    }
+    
+    .tc-ticket-info-single h3 {
+        font-size: 1.2em;
+    }
+    
+    .tc-ticket-additional-info > span {
+        font-size: 0.75em;
+        margin-top: 1px;
+    }
+    
+    body .notifyjs-wrapper .notifyjs-bootstrap-base {
+        padding: 10px;
+    }
+    
+    .notifyjs-wrapper .notifyjs-bootstrap-base span {
+        font-size: 1em;
+    }
+    
+}
+
+@media only screen and (max-width: 300px){ 
+
+    .tc-login-input-wrap label,
+    .tc-checkins ul li {
+        font-size: 0.9em;
+    }
+    
+    .tc-single-list .tc-buyer-address span.tc-span-wrap,
+    .tc-checkins ul li {
+        padding: 11px 10px;
+        line-height: 1.3em;
+    }
+    
+    .tc-ticket-info-single span {
+        line-height: 1.3em;
+    }
+    
+    .wordpress_installation_url {
+        font-size: 0.8em;
+    }
+    
+}
+
+
+/* LANDSCAPE RESPONSIVE */
+
+@media (max-width: 897px) and (max-height: 415px) {
+
+    .tc-login-logo {
+        margin-bottom: 22px;
+    }
+    
+    .tc-login-input-wrap label {
+        margin-bottom: 8px;
+    }
+    
+    .tc-login-logo img {
+        max-width: 43%;
+    }
+    
+    input[type="text"], 
+    input[type="password"] {
+        height: 50px;
+    }
+    
+    .tc-login-input-wrap {
+        margin: 0 0 10px 0;
+    }
+    
+    .tc-auto-login {
+        padding: 7px 0;
+    }
+    
+    .tc-login-button {
+        margin-top: 10px;
+    }
+    
+}
+
+@media (max-width: 740px) and (max-height: 320px) {
+    
+    .tc-half-content span.tc-ticket-info {
+        font-size: 4.5em;
+    }
+
+    .tc-login-wrap {
+        margin-top: -30px;
+    }
+    
+    .tc-login-input-wrap label {
+        margin-bottom: 2px;
+        font-size: 0.8em;
+    }
+       
+    .tc-login-input-wrap {
+        margin: 0 0 6px 0;
+    }
+    
+    .tc-auto-login {
+        padding: 6px 0;
+    }
+    
+    .tc-login-button {
+        margin-top: 5px;
+        padding: 12px 50px;
+    }
+    
+    .tc-login-wrap input {
+        padding: 7px 15px;
+    }
+    
+    .tc-login .tc-notification {
+        margin-bottom: 6px;
+        padding:0 0 5px;
+        font-size: 0.8em;
+        line-height: 1em;
+    }
+    
+}
