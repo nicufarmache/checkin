@@ -33,9 +33,23 @@ function showJSScanner() {
       if (devices && devices.length) {
         const html5QrCode = new Html5Qrcode(/* element id */ "reader");
         window.qrDecoder = html5QrCode;
-        const config = { fps: 10 };
+        const config = { 
+          fps: 10,
+          showTorchButtonIfSupported: true
+        };
         // If you want to prefer back camera
-        html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess);
+        html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess).then(() => {
+          let constraints = {
+            "torch": true,
+            "advanced": [{ "torch": true }]
+          };
+          html5QrCode.applyVideoConstraints(constraints).then(() => {
+            let settings = html5QrCode.getRunningTrackSettings();
+            console.log('getRunningTrackSettings:', settings);
+          }).catch(err => {
+            console.log('flashlight not supported:', err);
+          });
+        });
       }
     }).catch(err => {
       console.log('QR scanner error:', err)
