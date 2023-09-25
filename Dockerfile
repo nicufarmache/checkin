@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:18-alpine AS BUILD_IMAGE
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -14,6 +14,17 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+
+# remove development dependencies
+RUN npm prune --production
+
+FROM node:18-alpine
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# copy from build image
+COPY --from=BUILD_IMAGE /usr/src/app/ ./
 
 EXPOSE 3453
 
